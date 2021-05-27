@@ -25,7 +25,7 @@ locals {
   
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "${var.ami_prefix}-${local.timestamp}"
+  ami_name      = "${var.ami_name}-${local.timestamp}"
   instance_type = "t2.micro"
   region        = "us-west-2"
   source_ami_filter {
@@ -45,7 +45,7 @@ build {
   sources = ["source.amazon-ebs.ubuntu"]
   
   provisioner "shell" {
-    environment_var = [
+    environment_vars = [
       "FOO=hello world"
     ]
       inline = [
