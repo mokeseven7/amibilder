@@ -4,9 +4,9 @@ phases:
     pre_build:
         commands:
             - echo "Installing Packer.. "
-            - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+            - curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
             - apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-            - apt-get update && sudo apt-get install -y packer
+            - apt-get update && apt-get install -y packer
             - /usr/bin/packer --version
             - echo "Installing jq And Fixing Perms.."
             - curl -qL -o jq https://stedolan.github.io/jq/download/linux64/jq && chmod +x ./jq
