@@ -8,6 +8,7 @@ phases:
             - apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
             - apt-get update && apt-get install -y packer
             - /usr/bin/packer --version
+            - /usr/bin/packer init ubuntu_18.pkr.hcl
             - echo "Installing jq And Fixing Perms.."
             - curl -qL -o jq https://stedolan.github.io/jq/download/linux64/jq && chmod +x ./jq
             - echo "Validating Packer Template"
