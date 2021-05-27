@@ -42,7 +42,7 @@ source "amazon-ebs" "ubuntu" {
 
   
 build {
-  sources = ["source.amazon-ebs.ubuntu-lts"]
+  sources = ["source.amazon-ebs.ubuntu"]
   
   provisioner "shell" {
     environment_var = [
